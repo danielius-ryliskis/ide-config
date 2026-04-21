@@ -3,7 +3,7 @@ vim.lsp.enable({
   "lua_ls",
   "ts_ls",
   "tailwindcss_ls",
-  "emmet_ls"
+  "emmet_language_server",
 })
 
 -- Auto command which activates callback function once lsp is attached
