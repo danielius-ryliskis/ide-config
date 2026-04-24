@@ -75,12 +75,13 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- LSP
 keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
 
 -- Formating
--- keymap('n', '<F3>', ':!prettier --write %<CR>', { noremap = true, silent = true })
-keymap('n', '<leader>f', ':lua vim.lsp.buf.format()', opts)
+keymap('n', '<F3>', ':%!npx prettier --stdin-filepath %<CR>', { noremap = true, silent = true })
+-- keymap('n', '<leader>f', ':lua vim.lsp.buf.format()', opts)
+
 

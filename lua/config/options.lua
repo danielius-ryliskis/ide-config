@@ -35,3 +35,11 @@ vim.opt.sidescrolloff = 8
 -- vim.opt.guifont = "monospace:h17"               -- The font used in graphical neovim applications
 vim.opt.shortmess:append "c"                    -- This option helps to avoid hit-enter prompts caused by file.
 vim.opt.winborder = 'rounded'                   -- Border for autocomplete
+
+
+-- Enables relative line numbers in terminal buffers
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.opt_local.relativenumber = true 
+  end,
+})
