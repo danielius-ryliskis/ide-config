@@ -36,7 +36,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-
+vim.keymap.set("n", "<leader>cy", function()
+  local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
+  if #diagnostics == 0 then
+    print("No diagnostics on this line")
+    return
+  end
+  local messages = vim.tbl_map(function(d) return d.message end, diagnostics)
+  local result = table.concat(messages, "\n")
+  vim.fn.setreg("+", result)   -- copies to system clipboard
+  vim.fn.setreg('"', result)   -- copies to default register
+  print("Copied: " .. result)
+end, { desc = "Copy diagnostic message" })
 
 
 vim.diagnostic.config({

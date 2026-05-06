@@ -81,7 +81,6 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
 
 -- Formating
-keymap('n', '<F3>', ':%!npx prettier --stdin-filepath %<CR>', { noremap = true, silent = true })
--- keymap('n', '<leader>f', ':lua vim.lsp.buf.format()', opts)
-
+-- keymap('n', '<F3>', ':%!npx prettier --stdin-filepath %<CR>', { noremap = true, silent = true })
+keymap('n', '<leader>f', ':lua vim.lsp.buf.format()', opts)
 

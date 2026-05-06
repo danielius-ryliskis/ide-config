@@ -15,7 +15,7 @@ return {
 
     -- Auto command to start treesitter and set indentexpr for specific file types
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "lua", "javascript", "typescript", "typescriptreact", "javascriptreact", "html", "css" },
+      pattern = { "lua", "java", "javascript", "typescript", "typescriptreact", "javascriptreact", "html", "css" },
       callback = function()
         vim.treesitter.start()
         vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
